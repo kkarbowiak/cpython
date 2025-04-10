@@ -186,7 +186,7 @@ Now, how about doing something even more useful::
 
    import argparse
    parser = argparse.ArgumentParser()
-   parser.add_argument("square", help="display a square of a given number")
+   parser.add_argument("square", help="display the square of a given number")
    args = parser.parse_args()
    print(args.square**2)
 
@@ -206,7 +206,7 @@ give it as strings, unless we tell it otherwise. So, let's tell
 
    import argparse
    parser = argparse.ArgumentParser()
-   parser.add_argument("square", help="display a square of a given number",
+   parser.add_argument("square", help="display the square of a given number",
                        type=int)
    args = parser.parse_args()
    print(args.square**2)
@@ -354,7 +354,7 @@ Our program keeps growing in complexity::
    import argparse
    parser = argparse.ArgumentParser()
    parser.add_argument("square", type=int,
-                       help="display a square of a given number")
+                       help="display the square of a given number")
    parser.add_argument("-v", "--verbose", action="store_true",
                        help="increase output verbosity")
    args = parser.parse_args()
@@ -388,7 +388,7 @@ multiple verbosity values, and actually get to use them::
    import argparse
    parser = argparse.ArgumentParser()
    parser.add_argument("square", type=int,
-                       help="display a square of a given number")
+                       help="display the square of a given number")
    parser.add_argument("-v", "--verbosity", type=int,
                        help="increase output verbosity")
    args = parser.parse_args()
@@ -422,7 +422,7 @@ Let's fix it by restricting the values the ``--verbosity`` option can accept::
    import argparse
    parser = argparse.ArgumentParser()
    parser.add_argument("square", type=int,
-                       help="display a square of a given number")
+                       help="display the square of a given number")
    parser.add_argument("-v", "--verbosity", type=int, choices=[0, 1, 2],
                        help="increase output verbosity")
    args = parser.parse_args()
@@ -445,7 +445,7 @@ And the output:
    usage: prog.py [-h] [-v {0,1,2}] square
 
    positional arguments:
-     square                display a square of a given number
+     square                display the square of a given number
 
    options:
      -h, --help            show this help message and exit
@@ -495,7 +495,7 @@ to count the number of occurrences of specific options.
    usage: prog.py [-h] [-v] square
 
    positional arguments:
-     square           display a square of a given number
+     square           display the square of a given number
 
    options:
      -h, --help       show this help message and exit
@@ -529,7 +529,7 @@ Let's fix::
    import argparse
    parser = argparse.ArgumentParser()
    parser.add_argument("square", type=int,
-                       help="display a square of a given number")
+                       help="display the square of a given number")
    parser.add_argument("-v", "--verbosity", action="count",
                        help="increase output verbosity")
    args = parser.parse_args()
@@ -568,7 +568,7 @@ Let's fix that bug::
    import argparse
    parser = argparse.ArgumentParser()
    parser.add_argument("square", type=int,
-                       help="display a square of a given number")
+                       help="display the square of a given number")
    parser.add_argument("-v", "--verbosity", action="count", default=0,
                        help="increase output verbosity")
    args = parser.parse_args()
